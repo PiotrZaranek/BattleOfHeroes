@@ -1,0 +1,12 @@
+Paladyn
+
+Zycie: 550
+Mana: 120
+Atak: 40-45
+Obrona: 10
+Regeneracja many: 3
+
+Umiejetnosci:
+  1. Swiety blask - Dodaje 75 punktow zycia bohaterowi.
+  2. Tarcza nietykalnosci - Paladyn kiedy uzyje tej umiejetnosci przez 2 tury nie otrzymuje obrazen od atakow.
+  3. Boskie wezwanie  - Leczy bohatera o 50 punktow, dodaje 30 punkow many oraz zwieksza atak i obrone na 3 tury.

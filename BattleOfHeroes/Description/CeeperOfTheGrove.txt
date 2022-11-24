@@ -1,0 +1,12 @@
+Straznik Gaju
+
+Zycie: 500
+Mana: 200
+Atak: 25-30
+Obrona: 5
+Regeneracja many: 8
+
+Umiejetnosci:
+  1. Splatanie - Powoduje splatanie wrogiego bohatera co uniemozliwia jego atak i zadaje obrazenia przez 3.
+  2. Ciernista aura - W ka¿dej turze zadaje 10 obrazen wrogim bohaterom.
+  3. Wsparcie lesnych duchow - Zwieksza obrone straznika na 5 tur.
