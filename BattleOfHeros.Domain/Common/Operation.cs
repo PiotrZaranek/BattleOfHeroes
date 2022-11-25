@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace BattleOfHeroes.Domain.Common
 {
-    public abstract class Operation : IOperation
+    public abstract class Operation : IOperation, IAction
     {
         public string Name { get; set; }
-        public bool IsBlock { get; set; }
-        public int Time { get; set; }
+        public bool IsBlock { get; set; }        
 
         public abstract void Action(Hero hero, int value);
     }
