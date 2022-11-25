@@ -9,8 +9,9 @@ namespace BattleOfHeroes.Domain.ConcreteSkill.KeeperOfTheGrove
 {
     internal class ThornsAura : Skill
     {
-        public ThornsAura()
+        public ThornsAura(int id)
         {
+            Id = id;
             Name = "Ciernista Aura";
             NeedMana = 0;            
             Type = 'C';

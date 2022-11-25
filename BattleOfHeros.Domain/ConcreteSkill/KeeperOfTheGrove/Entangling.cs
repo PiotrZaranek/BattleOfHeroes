@@ -10,8 +10,9 @@ namespace BattleOfHeroes.Domain.ConcreteSkill.KeeperOfTheGrove
 {
     internal class Entangling : Skill
     {
-        public Entangling()
+        public Entangling(int id)
         {
+            Id = id;
             Name = "Splątanie";
             NeedMana = 30;
             Type = 'A';

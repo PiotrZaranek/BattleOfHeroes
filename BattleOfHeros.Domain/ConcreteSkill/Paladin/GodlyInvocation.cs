@@ -10,8 +10,9 @@ namespace BattleOfHeroes.Domain.ConcreteSkill.Paladin
 {
     internal class GodlyInvocation : Skill
     {
-        public GodlyInvocation()
+        public GodlyInvocation(int id)
         {
+            Id = id;
             Name = "Boskie wezwanie";
             NeedMana = 100;
             Type = 'P';

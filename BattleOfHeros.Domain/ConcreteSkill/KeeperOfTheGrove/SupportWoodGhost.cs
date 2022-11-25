@@ -10,8 +10,9 @@ namespace BattleOfHeroes.Domain.ConcreteSkill.KeeperOfTheGrove
 {
     internal class SupportWoodGhost : Skill
     {
-        public SupportWoodGhost()
+        public SupportWoodGhost(int id)
         {
+            Id = id;
             Name = "Wsparcie leśnych duchów";
             NeedMana = 30;
             Type = 'P';

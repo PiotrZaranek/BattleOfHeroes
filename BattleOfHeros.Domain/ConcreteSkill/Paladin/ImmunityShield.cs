@@ -10,8 +10,9 @@ namespace BattleOfHeroes.Domain.ConcreteSkill.Paladin
 {
     internal class ImmunityShield : Skill
     {
-        public ImmunityShield()
+        public ImmunityShield(int id)
         {
+            Id = id;
             Name = "Tarcza nietykalności";
             NeedMana = 60;
             Type = 'P';

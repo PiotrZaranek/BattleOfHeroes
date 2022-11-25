@@ -9,8 +9,9 @@ namespace BattleOfHeroes.Domain.ConcreteSkill.Paladin
 {
     public class HolyLight : Skill
     {
-        public HolyLight()
+        public HolyLight(int id)
         {
+            Id = id;
             Name = "Święty Blask";
             NeedMana = 40;
             Type = 'P';
