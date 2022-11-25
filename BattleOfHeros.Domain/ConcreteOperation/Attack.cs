@@ -12,8 +12,7 @@ namespace BattleOfHeroes.Domain.ConcreteOperation
         public Attack()
         {
             Name = "Atak";
-            IsBlock = false;
-            Time = 0;
+            IsBlock = false;            
         }
 
         public override void Action(Hero hero, int value)
@@ -24,14 +23,6 @@ namespace BattleOfHeroes.Domain.ConcreteOperation
                 value = r.Next(value - 5, value + 1);
                 hero.Life -= (value - hero.Defend);
             }            
-            else
-            {
-                Time--;
-                if (Time == 0)
-                {
-                    IsBlock = false;
-                }
-            }
         }
     }
 }

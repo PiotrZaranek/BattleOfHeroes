@@ -12,8 +12,7 @@ namespace BattleOfHeroes.Domain.ConcreteOperation
         public ManaRegeneration()
         {
             Name = "Regeneracja many";
-            IsBlock = false;
-            Time = 0;
+            IsBlock = false;            
         }
 
         public override void Action(Hero hero, int value)
@@ -28,15 +27,7 @@ namespace BattleOfHeroes.Domain.ConcreteOperation
                 {
                     hero.Mana += value;
                 }
-            }
-            else
-            {
-                Time--;
-                if (Time == 0)
-                {
-                    IsBlock = false;
-                }
-            }            
+            }          
         }
     }
 }
