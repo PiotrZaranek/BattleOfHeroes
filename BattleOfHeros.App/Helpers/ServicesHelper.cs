@@ -8,6 +8,22 @@ namespace BattleOfHeroes.App.Helpers
 {
     internal static class ServicesHelper
     {        
+        public static void SelectOperation()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Wybierz operacje:");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+
+        public static void GiveIdSkill()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Wybierz id umiejętnoąci!");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.ReadKey();
+        }
+
         public static void GiveIdHero()
         {
             Console.Clear();
