@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BattleOfHeroes.Domain.Common;
+using BattleOfHeroes.Domain.Concrete;
 
 namespace BattleOfHeroes.Domain.Abstract
 {
@@ -13,7 +14,6 @@ namespace BattleOfHeroes.Domain.Abstract
         string PlayerName { get; }        
         List<Hero> Heroes { get; set; }
         int SelectHero { get; set; }
-        Hero Hero { get; set; }
-        Hero Target { get; set; }
+        Move Move { get; set; }
     }
 }

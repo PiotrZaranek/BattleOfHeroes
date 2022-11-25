@@ -14,8 +14,7 @@ namespace BattleOfHeroes.Domain.Concrete
         public string PlayerName { get; }
         public List<Hero> Heroes { get; set; }
         public int SelectHero { get; set; }
-        public Hero Hero { get; set; }
-        public Hero Target { get; set; }
+        public Move Move { get; set; }
 
         public Player(int id, string name)
         {
@@ -23,8 +22,7 @@ namespace BattleOfHeroes.Domain.Concrete
             PlayerName = name;
             Heroes = new List<Hero>();
             SelectHero = 0;
-            Hero = null;
-            Target = null;
+            Move = new Move();
         }
     }
 }
