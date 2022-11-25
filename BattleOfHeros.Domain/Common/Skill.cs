@@ -7,8 +7,9 @@ using BattleOfHeroes.Domain.Abstract;
 
 namespace BattleOfHeroes.Domain.Common
 {
-    public abstract class Skill : ISkill
+    public abstract class Skill : ISkill, IAction
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public int NeedMana { get; set; }
         public char Type { get; set; }

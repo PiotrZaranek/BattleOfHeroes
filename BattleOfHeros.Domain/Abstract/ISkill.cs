@@ -9,6 +9,7 @@ namespace BattleOfHeroes.Domain.Abstract
 {
     internal interface ISkill
     {
+        int Id { get; set; }
         string Name { get; }
         int NeedMana { get; }
         char Type { get; set; }
