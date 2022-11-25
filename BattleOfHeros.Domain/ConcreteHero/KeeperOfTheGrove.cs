@@ -31,9 +31,9 @@ namespace BattleOfHeroes.Domain.ConcreteHero
 
         protected override void AddSkills()
         {
-            Skills.Add(new Entangling());
-            Skills.Add(new ThornsAura());
-            Skills.Add(new SupportWoodGhost());
+            Skills.Add(new Entangling(2));            
+            Skills.Add(new SupportWoodGhost(3));
+            Skills.Add(new ThornsAura(4));
         }
     }
 }

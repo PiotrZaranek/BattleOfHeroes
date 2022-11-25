@@ -32,9 +32,9 @@ namespace BattleOfHeroes.Domain.ConcreteHero
 
         protected override void AddSkills()
         {
-            Skills.Add(new HolyLight());
-            Skills.Add(new ImmunityShield());
-            Skills.Add(new GodlyInvocation());
+            Skills.Add(new HolyLight(2));
+            Skills.Add(new ImmunityShield(3));
+            Skills.Add(new GodlyInvocation(4));
         }
     }
 }
