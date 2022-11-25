@@ -11,8 +11,8 @@ namespace BattleOfHeroes
     internal class Program
     {
         static void Main(string[] args)
-        {
-            Console.WindowHeight = 60;
+        { 
+            Console.WindowHeight = 50;
             bool ExitGame = false;
             Console.Title = "Battle Of Heroes";           
             MenuServices menuServices = new MenuServices();
