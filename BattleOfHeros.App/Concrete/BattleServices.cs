@@ -25,11 +25,16 @@ namespace BattleOfHeroes.App.Concrete
 
         public void StartBattle(Battle battle, MenagerBattleServices menagerBattleServices)
         {
-            menagerBattleServices.ListAllHeros(battle);            
+            menagerBattleServices.ListAllHeros(battle);    
+            
             menagerBattleServices.SelectHero(battle.Players[0]);
+            menagerBattleServices.SelectOperation(battle.Players[0].Move);            
             menagerBattleServices.SelectTarget(battle.Players[0], battle.Players[1]);
+            
+
             menagerBattleServices.SelectHero(battle.Players[1]);
             menagerBattleServices.SelectTarget(battle.Players[1], battle.Players[0]);
+
             
 
 

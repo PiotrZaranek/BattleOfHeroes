@@ -184,12 +184,45 @@ namespace BattleOfHeroes.App.Menager
 
         public void SelectHero(Player player)
         {
-            player.Hero = GetHero(player, player.PlayerName);          
+            player.Move.Hero = GetHero(player, player.PlayerName);          
         }
+
+        public char SelectOperation(Move move)
+        {
+            int choose;
+            while (true)
+            {                
+                ServicesHelper.SelectOperation();
+                Console.WriteLine($"1. {move.Hero.Operations[0]}");
+                foreach (var skill in move.Hero.Skills)
+                {
+                    Console.WriteLine($"{skill.Id}. {skill.Name}");
+                }
+
+                try
+                {
+                    choose = Int32.Parse(Console.ReadLine());
+                }
+                catch
+                {
+                    ServicesHelper.GiveIdSkill();
+                    continue;
+                }
+
+                if(choose == 1)
+                {
+                    move.Action = move.Hero.Operations[0];
+                }
+
+                Console.WriteLine(move.Action);
+            }
+        }        
 
         public void SelectTarget(Player player, Player enemy)
         {
-           player.Target = GetHero(enemy, player.PlayerName);
+           player.Move.Target = GetHero(enemy, player.PlayerName);
         }
+
+
     }
 }
