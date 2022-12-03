@@ -11,23 +11,34 @@ namespace BattleOfHeroes.Domain.ConcreteEffect
     {
         public DamageIncreased(int time, int value)
         {
-            Name = "Ziększony Atak";
-            Time = time;
+            Name = "Zwiększony atak";
+            Time = time + 1;
             Value = value;
             Type = 'P';
+            Color = ConsoleColor.Green;
         }
 
-        public override void Action(Hero hero)
+        public override void Active(Hero hero)
         {
-            if(Time > 0)
+            hero.Damage += Value;            
+        }
+
+        public override void Execute(Hero hero)
+        {
+            if (Time > 1)
             {
-                hero.Damage += Value;
                 Time--;
             }
             else
             {
-                hero.Damage -= Value;
+                Time = 0;
+                Deactivate(hero);
             }
+        }
+
+        public override void Deactivate(Hero hero)
+        {
+            hero.Damage -= Value;
         }
     }
 }

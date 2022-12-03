@@ -12,22 +12,33 @@ namespace BattleOfHeroes.Domain.ConcreteEffect
         public DefendIncreased(int time, int value)
         {
             Name = "Zwiększona obrona";
-            Time = time;
+            Time = time + 1;
             Value = value;
             Type = 'P';
+            Color = ConsoleColor.Green;
         }
 
-        public override void Action(Hero hero)
+        public override void Active(Hero hero)
         {
-            if (Time > 0)
+            hero.Defend += Value;            
+        }
+
+        public override void Execute(Hero hero)
+        {
+            if(Time > 1)
             {
-                hero.Defend += Value;
                 Time--;
-            }            
+            }
             else
             {
-                hero.Defend -= Value;
+                Time = 0;
+                Deactivate(hero);
             }
+        }
+
+        public override void Deactivate(Hero hero)
+        {
+            hero.Defend -= Value;            
         }
     }
 }

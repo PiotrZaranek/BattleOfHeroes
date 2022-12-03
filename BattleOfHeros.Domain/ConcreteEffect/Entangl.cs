@@ -12,23 +12,34 @@ namespace BattleOfHeroes.Domain.ConcreteEffect
         public Entangl(int time, int value)
         {
             Name = "Splątanie";
-            Time = time;
+            Time = time + 1;
             Value = value;
             Type = 'N';
+            Color = ConsoleColor.Red;
         }
 
-        public override void Action(Hero hero)
+        public override void Active(Hero hero)
+        {            
+            hero.Operations[0].IsActive = false;
+        }
+
+        public override void Execute(Hero hero)
         {
-            if(Time > 0)
+            if(Time > 1)
             {
-                hero.Operations[0].IsBlock = true;
                 hero.Life -= Value;
                 Time--;
             }
             else
             {
-                hero.Operations[0].IsBlock = false;
+                Time = 0;
+                Deactivate(hero);
             }
+        }
+
+        public override void Deactivate(Hero hero)
+        {
+            hero.Operations[0].IsActive = true;
         }
     }
 }
