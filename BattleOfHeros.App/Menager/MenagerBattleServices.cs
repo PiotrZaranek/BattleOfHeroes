@@ -30,7 +30,7 @@ namespace BattleOfHeroes.App.Menager
             }
         }
 
-        public List<Hero> ChooseHero(MenuServices menuServices, MenagerMenuServices menagerMenuServices, string playerName, int count)
+        public List<Hero> ChooseHero(MenuServices menuServices, MenagerMenuServices menagerMenuServices, string playerName, int count, int IdNumber)
         {
             List<Hero> heros = new List<Hero>();
             int i = 1;
@@ -52,50 +52,56 @@ namespace BattleOfHeroes.App.Menager
                 {
                     case '1':
                         {
-                            Hero hero = new KeeperOfTheGrove(i);
+                            Hero hero = new KeeperOfTheGrove(IdNumber);
                             heros.Add(hero);
                             firstChoose = choosen;
-                            i++;                            
+                            i++;
+                            IdNumber++;
                             break;
                         }
                     case '2':
                         {
-                            Hero hero = new Paladin(i);
+                            Hero hero = new Paladin(IdNumber);
                             heros.Add(hero);
                             firstChoose = choosen;
                             i++;
+                            IdNumber++;
                             break;
                         }
                     case '3':
                         {
-                            Hero hero = new Paladin(i);
+                            Hero hero = new Paladin(IdNumber);
                             heros.Add(hero);
                             firstChoose = choosen;
                             i++;
+                            IdNumber++;
                             break;
                         }
                     case '4':
                         {
-                            Hero hero = new Paladin(i);
+                            Hero hero = new Paladin(IdNumber);
                             heros.Add(hero);
                             firstChoose = choosen;
                             i++;
+                            IdNumber++;
                             break;
                         }
                     case '5':
                         {
-                            Hero hero = new Paladin(i);
+                            Hero hero = new Paladin(IdNumber);
                             heros.Add(hero);
                             firstChoose = choosen;
                             i++;
+                            IdNumber++;
                             break;
                         }
                     case '6':
                         {
-                            Hero hero = new Paladin(i);
+                            Hero hero = new Paladin(IdNumber);
                             heros.Add(hero);
                             firstChoose = choosen;
                             i++;
+                            IdNumber++;
                             break;
                         }
                     default:
@@ -108,121 +114,5 @@ namespace BattleOfHeroes.App.Menager
 
             return heros;
         }
-
-        public void ListAllHeros(Battle battle)
-        {
-            Console.Clear();
-            foreach (var plyer in battle.Players)
-            {
-                Console.WriteLine(plyer.PlayerName);
-                Console.WriteLine("------------------------------------------------------------");
-                foreach (var hero in plyer.Heroes)
-                {
-                    hero.ShowStatistic();
-                    Console.Write("\n");
-                }
-                Console.WriteLine("------------------------------------------------------------");
-            }
-            Console.ReadKey();
-        }
-
-        private void ListPlayerHeroes(Player player)
-        {
-            Console.Clear();
-            Console.WriteLine(player.PlayerName);
-            Console.WriteLine("------------------------------------------------------------");
-            foreach (var hero in player.Heroes)
-            {
-                hero.ShowStatistic();
-            }
-            Console.WriteLine("------------------------------------------------------------");
-        }
-
-        private Hero GetHero(Player player, string name)
-        {
-            int choose;
-            Hero find;
-
-            while (true)
-            {
-                ListPlayerHeroes(player);
-                Console.WriteLine($"Teraz tura {name}");
-                ServicesHelper.SelectHero();
-                try
-                {
-                    choose = Int32.Parse(Console.ReadLine());
-                }
-                catch
-                {
-                    ServicesHelper.GiveIdHero();
-                    continue;
-                }
-               
-                find = null;
-
-                foreach (var hero in player.Heroes)
-                {
-                    if (choose == hero.Id)
-                    {
-                        find = hero;
-                    }
-                }
-
-                if (find == null)
-                {
-                    ServicesHelper.GiveIdHero();
-                    continue;
-                }
-                else
-                {
-                    break;
-                }
-            }
-
-            return find;
-        }
-
-        public void SelectHero(Player player)
-        {
-            player.Move.Hero = GetHero(player, player.PlayerName);          
-        }
-
-        public char SelectOperation(Move move)
-        {
-            int choose;
-            while (true)
-            {                
-                ServicesHelper.SelectOperation();
-                Console.WriteLine($"1. {move.Hero.Operations[0]}");
-                foreach (var skill in move.Hero.Skills)
-                {
-                    Console.WriteLine($"{skill.Id}. {skill.Name}");
-                }
-
-                try
-                {
-                    choose = Int32.Parse(Console.ReadLine());
-                }
-                catch
-                {
-                    ServicesHelper.GiveIdSkill();
-                    continue;
-                }
-
-                if(choose == 1)
-                {
-                    move.Action = move.Hero.Operations[0];
-                }
-
-                Console.WriteLine(move.Action);
-            }
-        }        
-
-        public void SelectTarget(Player player, Player enemy)
-        {
-           player.Move.Target = GetHero(enemy, player.PlayerName);
-        }
-
-
     }
 }
