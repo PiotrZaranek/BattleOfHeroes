@@ -1,10 +1,10 @@
 Paladyn
 
-Zycie: 550
-Mana: 120
-Atak: 40-45
-Obrona: 10
-Regeneracja many: 3
+Zycie: 275
+Mana: 60
+Atak: 17-22
+Obrona: 5
+Regeneracja many: 2
 
 Umiejetnosci:
   1. Swiety blask - Dodaje 75 punktow zycia bohaterowi.
