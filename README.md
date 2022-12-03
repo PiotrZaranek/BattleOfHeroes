@@ -2,7 +2,7 @@
 ### Rodzaj
 Bijatyka turowa 
 ### Możliwości
-Gra pozwala grać w dwóch trybach 1v1, 2v2. Na końcu bitwy można wyświetlić historię walki aby dogłębnie ją przeanalizować.
+Gra pozwala grać w dwóch trybach 1v1 lub 2v2. Na końcu bitwy można wyświetlić historię walki aby dogłębnie ją przeanalizować. Można wyświetlić opisy wszystkich bohaterów, ich statystyk oraz umiejtności.
 ### Opis
 Każdy bohater posiada właściwości takie jak: życie, mana, zadawane obrażenia, obronę oraz ilość regenerowanej many co turę oraz podstawowe operacje takie jak atak, regeneracje many oraz 3 unikalne umiejętności. 
 ### Mechanika
