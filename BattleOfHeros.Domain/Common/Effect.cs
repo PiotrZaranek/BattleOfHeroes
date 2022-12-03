@@ -13,6 +13,9 @@ namespace BattleOfHeroes.Domain.Common
         public int Time { get; set; }
         public int Value { get; set; }
         public char Type { get; set; }
-        public abstract void Action(Hero hero);
+        public ConsoleColor Color { get; set; }
+        public abstract void Active(Hero hero);
+        public abstract void Execute(Hero hero);
+        public abstract void Deactivate(Hero hero);
     }
 }
