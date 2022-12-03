@@ -14,7 +14,9 @@ namespace BattleOfHeroes.Domain.Abstract
         int NeedMana { get; }
         char Type { get; set; }
         bool IsActive { get; set; }
+        bool IsAura { get; set; }
 
-        void Action(Hero hero);
+        void Action(Hero hero, Hero target);
+        void UpdateMana(Hero hero);
     }
 }
