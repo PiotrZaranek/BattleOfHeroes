@@ -13,20 +13,24 @@ namespace BattleOfHeroes.Domain.ConcreteSkill.Paladin
         {
             Id = id;
             Name = "Święty Blask";
-            NeedMana = 40;
+            NeedMana = 20;
             Type = 'P';
             IsActive = true;
+            IsAura = false;
         }
 
-        public override void Action(Hero hero)
+        public override void Action(Hero hero, Hero target)
         {
-            if ((hero.Life += 75) > hero.MaxLife)
+            UpdateMana(hero);
+
+            int check = target.Life + 75;
+            if (check > target.MaxLife)
             {
-                hero.Life = hero.MaxLife;
+                target.Life = target.MaxLife;
             }
             else
             {
-                hero.Life += 75;
+                target.Life += 75;
             }
         }
     }

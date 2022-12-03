@@ -14,14 +14,19 @@ namespace BattleOfHeroes.Domain.ConcreteSkill.KeeperOfTheGrove
         {
             Id = id;
             Name = "Wsparcie leśnych duchów";
-            NeedMana = 30;
+            NeedMana = 15;
             Type = 'P';
             IsActive = true;
+            IsAura = false;
         }
 
-        public override void Action(Hero hero)
+        public override void Action(Hero hero, Hero target)
         {
-            hero.Effects.Add(new DefendIncreased(5, 7));
+            UpdateMana(hero);
+
+            Effect effect = new DefendIncreased(5, 7);
+            target.Effects.Add(effect);
+            effect.Active(target);
         }
     }
 }

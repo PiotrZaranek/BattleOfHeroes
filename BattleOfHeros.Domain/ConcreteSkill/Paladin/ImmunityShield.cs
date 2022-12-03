@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BattleOfHeroes.Domain.Common;
-using BattleOfHeroes.Domain.ConcreteEffect;
+using BattleOfHeroes.Domain.ConcreteState;
 
 namespace BattleOfHeroes.Domain.ConcreteSkill.Paladin
 {
@@ -14,14 +14,16 @@ namespace BattleOfHeroes.Domain.ConcreteSkill.Paladin
         {
             Id = id;
             Name = "Tarcza nietykalności";
-            NeedMana = 60;
+            NeedMana = 30;
             Type = 'P';
             IsActive = true;
+            IsAura = false;
         }
 
-        public override void Action(Hero hero)
+        public override void Action(Hero hero, Hero target)
         {
-            hero.Effects.Add(new Immunity(2));
+            UpdateMana(hero);
+            target.States.Add(new Immunity(2));
         }
     }
 }

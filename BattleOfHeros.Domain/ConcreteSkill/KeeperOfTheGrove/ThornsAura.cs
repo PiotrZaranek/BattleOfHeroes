@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BattleOfHeroes.Domain.Common;
+using BattleOfHeroes.Domain.Abstract;
 
 namespace BattleOfHeroes.Domain.ConcreteSkill.KeeperOfTheGrove
 {
@@ -14,13 +15,14 @@ namespace BattleOfHeroes.Domain.ConcreteSkill.KeeperOfTheGrove
             Id = id;
             Name = "Ciernista Aura";
             NeedMana = 0;            
-            Type = 'C';
+            Type = 'A';
             IsActive = true;
+            IsAura = true;
         }
 
-        public override void Action(Hero hero)
+        public override void Action(Hero hero, Hero target)
         {
-            hero.Life -= 10;
+            target.Life -= 10;
         }
     }
 }

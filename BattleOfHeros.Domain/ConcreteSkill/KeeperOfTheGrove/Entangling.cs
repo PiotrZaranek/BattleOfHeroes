@@ -14,14 +14,19 @@ namespace BattleOfHeroes.Domain.ConcreteSkill.KeeperOfTheGrove
         {
             Id = id;
             Name = "Splątanie";
-            NeedMana = 30;
+            NeedMana = 15;
             Type = 'A';
             IsActive = true;
+            IsAura = false;
         }
 
-        public override void Action(Hero hero)
+        public override void Action(Hero hero, Hero target)
         {
-            hero.Effects.Add(new Entangl(3, 14));
+            UpdateMana(hero);
+
+            Entangl entangl = new Entangl(3, 14);
+            target.Effects.Add(entangl);
+            entangl.Active(target);
         }
     }
 }

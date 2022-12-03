@@ -12,12 +12,13 @@ namespace BattleOfHeroes.Domain.ConcreteOperation
         public ManaRegeneration()
         {
             Name = "Regeneracja many";
-            IsBlock = false;            
+            IsActive = true;
+            Type = 'C';
         }
 
         public override void Action(Hero hero, int value)
         {
-            if (IsBlock == false)
+            if (IsActive == true)
             {
                 if ((hero.Mana += value) > hero.MaxMana)
                 {

@@ -14,33 +14,40 @@ namespace BattleOfHeroes.Domain.ConcreteSkill.Paladin
         {
             Id = id;
             Name = "Boskie wezwanie";
-            NeedMana = 100;
+            NeedMana = 50;
             Type = 'P';
             IsActive = true;
+            IsAura = false;
         }
 
-        public override void Action(Hero hero)
+        public override void Action(Hero hero, Hero target)
         {
-            if((hero.Life += 50) > hero.MaxLife)
+            UpdateMana(hero);
+            if((target.Life += 50) > target.MaxLife)
             {
-                hero.Life = hero.MaxLife;
+                target.Life = target.MaxLife;
             }
             else
             {
-                hero.Life += 50;
+                target.Life += 50;
             }
 
-            if((hero.Mana += 30) > hero.MaxMana)
+            if((target.Mana += 30) > target.MaxMana)
             {
-                hero.Mana = hero.MaxMana;
+                target.Mana = target.MaxMana;
             }
             else
             {
-                hero.Mana += 30;
+                target.Mana += 30;
             }
 
-            hero.Effects.Add(new DamageIncreased(3, 10));
-            hero.Effects.Add(new DefendIncreased(3, 5));
+            Effect effect = new DamageIncreased(3, 10);
+            target.Effects.Add(effect);
+            effect.Active(target);
+
+            effect = new DefendIncreased(3, 5);
+            target.Effects.Add(effect);
+            effect.Active(target);
         }
     }
 }
