@@ -16,6 +16,10 @@ namespace BattleOfHeroes.App.Concrete
         public void ChooseHeroPlayer(List<Hero> heroes, int id, PlayerServices playerServices)
         {
             playerServices.Elements[id].Heroes = heroes;
+            foreach (var hero in playerServices.Elements[id].Heroes)
+            {
+                hero.Owner = playerServices.Elements[id];
+            }
         }
 
         public Battle CreateBattle(PlayerServices playerServices)
@@ -25,20 +29,7 @@ namespace BattleOfHeroes.App.Concrete
 
         public void StartBattle(Battle battle, MenagerBattleServices menagerBattleServices)
         {
-            menagerBattleServices.ListAllHeros(battle);    
-            
-            menagerBattleServices.SelectHero(battle.Players[0]);
-            menagerBattleServices.SelectOperation(battle.Players[0].Move);            
-            menagerBattleServices.SelectTarget(battle.Players[0], battle.Players[1]);
-            
-
-            menagerBattleServices.SelectHero(battle.Players[1]);
-            menagerBattleServices.SelectTarget(battle.Players[1], battle.Players[0]);
-
-            
-
-
-            Console.ReadKey();
+            battle.Main();      
         }
 
         
