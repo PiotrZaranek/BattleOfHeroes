@@ -15,16 +15,17 @@ namespace BattleOfHeroes.Domain.ConcreteHero
         {
             Id = id;
             Name = "Strażnik Gaju";
-            Life = 500;
-            Mana = 200;
-            Damage = 30;
-            Defend = 5;
-            ManaRegeneration = 8;
-            MaxLife = 500;
-            MaxMana = 200;
+            Life = 250;
+            Mana = 100;
+            Damage = 15;
+            Defend = 3;
+            ManaRegeneration = 4;
+            MaxLife = 250;
+            MaxMana = 100;
             Operations = new List<Operation>();
             Skills = new List<Skill>();
             Effects = new List<Effect>();
+            States = new List<State>();
             AddOperations();
             AddSkills();
         }

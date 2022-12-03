@@ -16,16 +16,17 @@ namespace BattleOfHeroes.Domain.ConcreteHero
         {
             Id= id;
             Name = "Paladyn";
-            Life = 550;
-            Mana = 120;
-            Damage = 45;
-            Defend = 10;
-            ManaRegeneration = 4;
-            MaxLife = 550;
-            MaxMana = 120;
+            Life = 275;
+            Mana = 60;
+            Damage = 22;
+            Defend = 5;
+            ManaRegeneration = 2;
+            MaxLife = 225;
+            MaxMana = 60;
             Operations = new List<Operation>();
             Skills = new List<Skill>();
             Effects = new List<Effect>();
+            States = new List<State>();
             AddOperations();
             AddSkills();
         }
