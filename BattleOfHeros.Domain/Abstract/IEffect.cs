@@ -13,7 +13,12 @@ namespace BattleOfHeroes.Domain.Abstract
         int Time { get; set; }
         int Value { get; set; }
         char Type { get; set; }
+        ConsoleColor Color { get; set; }
 
-        void Action(Hero hero);            
+        void Active(Hero hero);
+
+        void Execute(Hero hero);
+
+        void Deactivate(Hero hero);
     }
 }
