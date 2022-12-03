@@ -9,15 +9,17 @@ namespace BattleOfHeroes.Domain.ConcreteOperation
 {
     internal class Attack : Operation
     {
-        public Attack()
+        public Attack(int id)
         {
+            Id = id;
             Name = "Atak";
-            IsBlock = false;            
+            IsActive = true;
+            Type = 'A';
         }
 
         public override void Action(Hero hero, int value)
         {
-            if (IsBlock == false)
+            if (IsActive == true)
             {
                 Random r = new Random();
                 value = r.Next(value - 5, value + 1);
