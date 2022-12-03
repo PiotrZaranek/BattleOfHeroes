@@ -10,7 +10,8 @@ namespace BattleOfHeroes.Domain.Abstract
     internal interface IMove
     {
         Hero Hero { get; set; }
-        IAction Action { get; set; }
+        int Action { get; set; }
+        char Type { get; set; }
         Hero Target { get; set; }
     }
 }
