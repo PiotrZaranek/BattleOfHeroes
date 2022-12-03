@@ -11,13 +11,14 @@ namespace BattleOfHeroes.Domain.Concrete
     public class Move : IMove
     {
         public Hero Hero { get; set; }
-        public IAction Action { get; set; }
+        public int Action { get; set; }
+        public char Type { get; set; }
         public Hero Target { get; set; }
 
         public Move()
         {
             Hero = null;
-            Action = null;
+            Action = 0;
             Target = null;
         }
     }
