@@ -1,4 +1,5 @@
 ﻿using BattleOfHeroes.Domain.Abstract;
+using BattleOfHeroes.Domain.Concrete;
 using BattleOfHeroes.Domain.ConcreteOperation;
 using System;
 using System.Collections.Generic;
@@ -18,11 +19,14 @@ namespace BattleOfHeroes.Domain.Common
         public int ManaRegeneration { get; set; }
         public string Name { get; set; }
         public int MaxLife { get; set; }
-        public int MaxMana { get; set; }
+        public int MaxMana { get; set; }      
+        public Player Owner { get; set; }
+
 
         public List<Operation> Operations { get; set; }
         public List<Skill> Skills { get; set; }
         public List<Effect> Effects { get; set; }
+        public List<State> States { get; set; }
                  
         public void ShowStatistic()
         {
@@ -39,16 +43,26 @@ namespace BattleOfHeroes.Domain.Common
             Console.WriteLine($"Obrona: {Defend}");
             Console.ForegroundColor = ConsoleColor.White;
 
+            Console.WriteLine("Stan:");
+            foreach (var state in States)
+            {
+                Console.ForegroundColor = state.Color;
+                Console.WriteLine($"\t{state.Name}: {state.Time}");
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+
             Console.WriteLine("Efekty:");
             foreach (var effect in Effects)
             {
+                Console.ForegroundColor = effect.Color;
                 Console.WriteLine($"\t{effect.Name}: {effect.Time}");
+                Console.ForegroundColor = ConsoleColor.White;
             }
 
             Console.WriteLine("Umiejętności:");
             foreach (var skill in Skills)
             {
-                if(skill.Type == 'C')
+                if(skill.IsAura)
                 {
                     Console.WriteLine($"\t{skill.Name}");
                 }
@@ -62,8 +76,52 @@ namespace BattleOfHeroes.Domain.Common
 
         protected void AddOperations()
         {
-            Operations.Add(new Attack());
+            Operations.Add(new Attack(1));
             Operations.Add(new ManaRegeneration());
+        }
+
+        public bool IsDead()
+        {
+            if(Life <= 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }            
+        }
+
+        public void DeleteEffect()
+        {
+            List<Effect> ToDelete = new List<Effect>();
+
+            foreach (var effect in Effects)
+            {
+                if(effect.Time == 0)
+                {
+                    ToDelete.Add(effect);
+                }
+            }
+
+            foreach (var effect in ToDelete)
+            {
+                Effects.Remove(effect);
+            }
+        }
+
+        public void Regeneration()
+        {
+            int value = Mana + ManaRegeneration;
+
+            if(value > MaxMana)
+            {
+                Mana = MaxMana;
+            }
+            else
+            {
+                Mana = value;
+            }
         }
 
         protected abstract void AddSkills();
