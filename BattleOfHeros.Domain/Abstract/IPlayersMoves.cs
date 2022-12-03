@@ -12,5 +12,7 @@ namespace BattleOfHeroes.Domain.Abstract
         string PlayerName { get; }
         string HeroName { get; }
         string Action { get; }
+
+        void ShowMove();
     }
 }
