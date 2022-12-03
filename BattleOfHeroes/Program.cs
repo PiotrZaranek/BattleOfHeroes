@@ -12,7 +12,7 @@ namespace BattleOfHeroes
     {
         static void Main(string[] args)
         { 
-            Console.WindowHeight = 50;
+            Console.WindowHeight = 62;
             bool ExitGame = false;
             Console.Title = "Battle Of Heroes";           
             MenuServices menuServices = new MenuServices();
@@ -40,10 +40,9 @@ namespace BattleOfHeroes
                             Console.Clear();
                             playerServices = new PlayerServices();
                             battleServices.GameMode = menagerBattleServices.ChooseGameMode(menuServices, menagerMenuServices) - '0';
-                            battleServices.ChooseHeroPlayer(menagerBattleServices.ChooseHero(menuServices, menagerMenuServices, playerServices.Elements[0].PlayerName, battleServices.GameMode), 0, playerServices);
-                            battleServices.ChooseHeroPlayer(menagerBattleServices.ChooseHero(menuServices, menagerMenuServices, playerServices.Elements[1].PlayerName, battleServices.GameMode), 1, playerServices);
+                            battleServices.ChooseHeroPlayer(menagerBattleServices.ChooseHero(menuServices, menagerMenuServices, playerServices.Elements[0].PlayerName, battleServices.GameMode, 1), 0, playerServices);
+                            battleServices.ChooseHeroPlayer(menagerBattleServices.ChooseHero(menuServices, menagerMenuServices, playerServices.Elements[1].PlayerName, battleServices.GameMode, 3), 1, playerServices);
                             battleServices.StartBattle(battleServices.CreateBattle(playerServices), menagerBattleServices);
-                            Console.ReadKey();
                             break;
                         }
                     case '2':
