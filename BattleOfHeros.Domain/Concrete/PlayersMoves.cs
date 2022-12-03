@@ -21,5 +21,10 @@ namespace BattleOfHeroes.Domain.Concrete
             HeroName = heroName;
             Action = action;
         }
+
+        public void ShowMove()
+        {
+            Console.Write($"|{Turn}-{PlayerName}-{HeroName}-{Action}|");
+        }
     }
 }
