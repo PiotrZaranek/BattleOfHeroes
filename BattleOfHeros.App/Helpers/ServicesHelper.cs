@@ -7,32 +7,7 @@ using System.Threading.Tasks;
 namespace BattleOfHeroes.App.Helpers
 {
     internal static class ServicesHelper
-    {        
-        public static void SelectOperation()
-        {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Wybierz operacje:");
-            Console.ForegroundColor = ConsoleColor.White;
-        }
-
-        public static void GiveIdSkill()
-        {
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Wybierz id umiejętnoąci!");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.ReadKey();
-        }
-
-        public static void GiveIdHero()
-        {
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Wybierz bohatera za pomocą jego Id!");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.ReadKey();
-        }
-
+    {      
         public static void SecondHero()
         {
             Console.Clear();
@@ -41,6 +16,7 @@ namespace BattleOfHeroes.App.Helpers
             Console.ForegroundColor = ConsoleColor.White;
             Console.ReadKey();
         }
+
         public static void BadChoose()
         {
             Console.Clear();
@@ -63,13 +39,6 @@ namespace BattleOfHeroes.App.Helpers
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Wybierz operację:");
-            Console.ForegroundColor = ConsoleColor.White;
-        }
-
-        public static void SelectHero()
-        {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Wybierz bohatera:");
             Console.ForegroundColor = ConsoleColor.White;
         }
 
