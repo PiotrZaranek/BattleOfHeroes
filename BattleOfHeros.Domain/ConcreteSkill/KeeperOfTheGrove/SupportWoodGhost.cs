@@ -8,7 +8,7 @@ using BattleOfHeroes.Domain.ConcreteEffect;
 
 namespace BattleOfHeroes.Domain.ConcreteSkill.KeeperOfTheGrove
 {
-    internal class SupportWoodGhost : Skill
+    public class SupportWoodGhost : Skill
     {
         public SupportWoodGhost(int id)
         {
@@ -24,7 +24,7 @@ namespace BattleOfHeroes.Domain.ConcreteSkill.KeeperOfTheGrove
         {
             UpdateMana(hero);
 
-            Effect effect = new DefendIncreased(5, 7);
+            Effect effect = new DefendIncreased(5, 5);
             target.Effects.Add(effect);
             effect.Active(target);
         }

@@ -8,7 +8,7 @@ using BattleOfHeroes.Domain.ConcreteEffect;
 
 namespace BattleOfHeroes.Domain.ConcreteSkill.KeeperOfTheGrove
 {
-    internal class Entangling : Skill
+    public class Entangling : Skill
     {
         public Entangling(int id)
         {

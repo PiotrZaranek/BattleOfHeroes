@@ -7,7 +7,7 @@ using BattleOfHeroes.Domain.Common;
 
 namespace BattleOfHeroes.Domain.ConcreteEffect
 {
-    internal class DefendIncreased : Effect
+    public class DefendIncreased : Effect
     {
         public DefendIncreased(int time, int value)
         {

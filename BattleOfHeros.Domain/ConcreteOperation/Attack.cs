@@ -7,7 +7,7 @@ using BattleOfHeroes.Domain.Common;
 
 namespace BattleOfHeroes.Domain.ConcreteOperation
 {
-    internal class Attack : Operation
+    public class Attack : Operation
     {
         public Attack(int id)
         {

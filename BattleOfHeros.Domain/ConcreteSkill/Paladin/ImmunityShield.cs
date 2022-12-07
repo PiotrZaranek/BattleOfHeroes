@@ -8,7 +8,7 @@ using BattleOfHeroes.Domain.ConcreteState;
 
 namespace BattleOfHeroes.Domain.ConcreteSkill.Paladin
 {
-    internal class ImmunityShield : Skill
+    public class ImmunityShield : Skill
     {
         public ImmunityShield(int id)
         {

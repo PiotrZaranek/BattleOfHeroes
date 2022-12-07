@@ -7,7 +7,7 @@ using BattleOfHeroes.Domain.Common;
 
 namespace BattleOfHeroes.Domain.ConcreteEffect
 {
-    internal class Entangl : Effect
+    public class Entangl : Effect
     {
         public Entangl(int time, int value)
         {

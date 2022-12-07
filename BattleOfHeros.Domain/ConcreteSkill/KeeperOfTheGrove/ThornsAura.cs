@@ -8,7 +8,7 @@ using BattleOfHeroes.Domain.Abstract;
 
 namespace BattleOfHeroes.Domain.ConcreteSkill.KeeperOfTheGrove
 {
-    internal class ThornsAura : Skill
+    public class ThornsAura : Skill
     {
         public ThornsAura(int id)
         {
