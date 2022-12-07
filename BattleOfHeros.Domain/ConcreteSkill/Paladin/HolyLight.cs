@@ -24,6 +24,7 @@ namespace BattleOfHeroes.Domain.ConcreteSkill.Paladin
             UpdateMana(hero);
 
             int check = target.Life + 75;
+
             if (check > target.MaxLife)
             {
                 target.Life = target.MaxLife;
