@@ -21,7 +21,7 @@ namespace BattleOfHeroes.Domain.ConcreteHero
             Damage = 22;
             Defend = 5;
             ManaRegeneration = 2;
-            MaxLife = 225;
+            MaxLife = 275;
             MaxMana = 60;
             Operations = new List<Operation>();
             Skills = new List<Skill>();
