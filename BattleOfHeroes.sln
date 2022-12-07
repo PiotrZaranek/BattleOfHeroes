@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BattleOfHeroes.Domain", "Ba
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BattleOfHeroes.BattleApp", "BattleOfHeroes.Battle\BattleOfHeroes.BattleApp.csproj", "{BBB9D9D5-A44C-4DE9-B4B2-05D9B584F155}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleOfHeroes.UnitTests", "BattleOfHeroes.UnitTests\BattleOfHeroes.UnitTests.csproj", "{B8519925-5C7E-484B-B689-CDE981452844}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{BBB9D9D5-A44C-4DE9-B4B2-05D9B584F155}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBB9D9D5-A44C-4DE9-B4B2-05D9B584F155}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBB9D9D5-A44C-4DE9-B4B2-05D9B584F155}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8519925-5C7E-484B-B689-CDE981452844}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8519925-5C7E-484B-B689-CDE981452844}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8519925-5C7E-484B-B689-CDE981452844}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8519925-5C7E-484B-B689-CDE981452844}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
