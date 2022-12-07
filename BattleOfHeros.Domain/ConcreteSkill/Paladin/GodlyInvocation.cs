@@ -8,7 +8,7 @@ using BattleOfHeroes.Domain.ConcreteEffect;
 
 namespace BattleOfHeroes.Domain.ConcreteSkill.Paladin
 {
-    internal class GodlyInvocation : Skill
+    public class GodlyInvocation : Skill
     {
         public GodlyInvocation(int id)
         {
@@ -23,7 +23,9 @@ namespace BattleOfHeroes.Domain.ConcreteSkill.Paladin
         public override void Action(Hero hero, Hero target)
         {
             UpdateMana(hero);
-            if((target.Life += 50) > target.MaxLife)
+            int check = target.Life + 50;
+
+            if (check > target.MaxLife)
             {
                 target.Life = target.MaxLife;
             }
@@ -32,7 +34,9 @@ namespace BattleOfHeroes.Domain.ConcreteSkill.Paladin
                 target.Life += 50;
             }
 
-            if((target.Mana += 30) > target.MaxMana)
+            check = target.Mana + 30;
+
+            if(check > target.MaxMana)
             {
                 target.Mana = target.MaxMana;
             }
@@ -41,11 +45,11 @@ namespace BattleOfHeroes.Domain.ConcreteSkill.Paladin
                 target.Mana += 30;
             }
 
-            Effect effect = new DamageIncreased(3, 10);
+            Effect effect = new DamageIncreased(3, 7);
             target.Effects.Add(effect);
             effect.Active(target);
 
-            effect = new DefendIncreased(3, 5);
+            effect = new DefendIncreased(3, 3);
             target.Effects.Add(effect);
             effect.Active(target);
         }
