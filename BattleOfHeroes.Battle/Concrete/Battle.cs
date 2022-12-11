@@ -15,8 +15,7 @@ namespace BattleOfHeroes.Domain.Concrete
         public List<Player> Players { get; }
         public int Turn { get; set; }
         public BattleList BattleList { get; set; }
-
-        // Done!
+        
         public Battle(List<Player> players)
         {
             Players = new List<Player>();
@@ -66,7 +65,7 @@ namespace BattleOfHeroes.Domain.Concrete
             ExecuteAuraAndManaRegeneration(player, enemy);
             CheckIsHeroDead(player, enemy);
         }
-        // Done!
+        
         private bool ListHerosAndTurn()
         {
             Console.Clear();
@@ -94,7 +93,7 @@ namespace BattleOfHeroes.Domain.Concrete
                 return false;
             }
         }
-        // Done!
+        
         private void ListHeros(Player player)
         {            
             Console.WriteLine("------------------------------------------------------------");
@@ -104,7 +103,7 @@ namespace BattleOfHeroes.Domain.Concrete
                 Console.WriteLine("------------------------------------------------------------");
             }
         }
-        // Done!
+        
         private Hero GetHero(Player player)
         {
             int choose;
@@ -146,7 +145,7 @@ namespace BattleOfHeroes.Domain.Concrete
 
             return find;
         }
-        // Done!
+        
         private void SelectHero(Player player, Player enemy)
         {
             int choose;
@@ -200,7 +199,7 @@ namespace BattleOfHeroes.Domain.Concrete
             }
             
         }
-        // Done!
+        
         private void SelectTarget(Player player, Player enemy)
         {
             int choose;
@@ -275,7 +274,7 @@ namespace BattleOfHeroes.Domain.Concrete
             }
             
         }
-        // Done!
+        
         private void SelectOperations(Player player, Player enemy)
         {
             if (player.Move.Target.Owner == player)
@@ -287,7 +286,7 @@ namespace BattleOfHeroes.Domain.Concrete
                 ListOperations(player.Move, 'A', enemy);
             }
         }
-        // Done!
+        
         private void ListOperations(Move move, char type, Player enemy)
         {
             int choose;
@@ -378,19 +377,19 @@ namespace BattleOfHeroes.Domain.Concrete
                 SelectTarget(move.Hero.Owner, enemy);
             }            
         }
-        // Done!
+        
         private void ExecuteOperation(Hero target, Operation operation, Hero hero)
         {
             operation.Action(target, hero.Damage);
             BattleList.AddMove(Turn, hero.Owner, operation);
         }
-        // Done!
+        
         private void ExecuteOperation(Hero target, Skill skill, Hero hero)
         {
             skill.Action(hero, target);
             BattleList.AddMove(Turn, hero.Owner, skill);
         }
-        // Done!
+        
         private void ExecuteEffect(Player player)
         {
             foreach (var hero in player.Heroes)
@@ -403,7 +402,7 @@ namespace BattleOfHeroes.Domain.Concrete
                 hero.DeleteEffect();
             }
         }
-        // Done!
+        
         private void ExecuteAuraAndManaRegeneration(Player player, Player enemy)
         {
             foreach (var hero in player.Heroes)
@@ -429,10 +428,10 @@ namespace BattleOfHeroes.Domain.Concrete
                     }
                 }
 
-                hero.Regeneration();
+                hero.Operations[1].Action(hero, hero.ManaRegeneration);
             }
         }
-        // Done!
+        
         private void CheckIsHeroDead(Player player, Player enemy)
         {
             List<Hero> dead = new List<Hero>();
@@ -467,6 +466,7 @@ namespace BattleOfHeroes.Domain.Concrete
                 enemy.Heroes.Remove(hero);
             }
         }
+
         private void Finish()
         {
             char choose;
@@ -488,13 +488,6 @@ namespace BattleOfHeroes.Domain.Concrete
             {                
                 BattleList.ListMoves();
             }
-        }  
-        
-        private void Test()
-        {
-            Console.Clear();
-            BattleList.ListMoves();
-            Console.ReadKey();
-        }
+        }        
     }
 }
