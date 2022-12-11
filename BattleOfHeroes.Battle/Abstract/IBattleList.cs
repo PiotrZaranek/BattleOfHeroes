@@ -10,7 +10,7 @@ namespace BattleOfHeroes.BattleApp.Abstract
 {
     internal interface IBattleList
     {
-        List<PlayersMoves> PlayersMoves { get; set; }
+        List<PlayerMove> PlayersMoves { get; set; }
 
         void AddMove(int turn, Player player, Operation operation);
         void AddMove(int turn, Player player, Skill skill);

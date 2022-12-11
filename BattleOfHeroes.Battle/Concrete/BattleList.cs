@@ -12,34 +12,34 @@ namespace BattleOfHeroes.BattleApp.Concrete
 {
     public class BattleList : IBattleList
     {
-        public List<PlayersMoves> PlayersMoves { get; set; }
+        public List<PlayerMove> PlayersMoves { get; set; }
 
         public BattleList()
         {
-            PlayersMoves = new List<PlayersMoves>();
+            PlayersMoves = new List<PlayerMove>();
         }
 
         public void AddMove(int turn, Player player, Operation operation)
         {
-            PlayersMoves move = new PlayersMoves(turn, player.PlayerName, player.Move.Hero.Name, operation.Name);
+            PlayerMove move = new PlayerMove(turn, player.PlayerName, player.Move.Hero.Name, operation.Name);
             PlayersMoves.Add(move);
         }
 
         public void AddMove(int turn, Player player, Skill skill)
         {
-            PlayersMoves move = new PlayersMoves(turn, player.PlayerName, player.Move.Hero.Name, skill.Name);
+            PlayerMove move = new PlayerMove(turn, player.PlayerName, player.Move.Hero.Name, skill.Name);
             PlayersMoves.Add(move);
         }
 
         public void AddMove(int turn, Player player, string message)
         {
-            PlayersMoves move = new PlayersMoves(turn, player.PlayerName, "", message);
+            PlayerMove move = new PlayerMove(turn, player.PlayerName, "", message);
             PlayersMoves.Add(move);
         }
 
         public void AddMove(int turn, Player player, Hero hero)
         {
-            PlayersMoves move = new PlayersMoves(turn, player.PlayerName, hero.Name, "Umiera!");
+            PlayerMove move = new PlayerMove(turn, player.PlayerName, hero.Name, "Umiera!");
             PlayersMoves.Add(move);
         }
 
