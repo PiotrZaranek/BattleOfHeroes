@@ -12,7 +12,7 @@ namespace BattleOfHeroes.App.Menager
     {
         public char ChooseGameMode(MenuServices menuServices, MenagerMenuServices menagerMenuServices)
         {
-            char mode = '0';
+            char mode;
             while (true)
             {
                 Console.Clear();
