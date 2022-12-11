@@ -110,20 +110,6 @@ namespace BattleOfHeroes.Domain.Common
             }
         }
 
-        public void Regeneration()
-        {
-            int value = Mana + ManaRegeneration;
-
-            if(value > MaxMana)
-            {
-                Mana = MaxMana;
-            }
-            else
-            {
-                Mana = value;
-            }
-        }
-
         protected abstract void AddSkills();
     }
 }
