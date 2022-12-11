@@ -20,8 +20,8 @@ namespace BattleOfHeroes.App.Concrete
 
         protected override void Initialize()
         {
-            AddElement(MenagerPlayerServices.CreatePlayer(1, Elements));
-            AddElement(MenagerPlayerServices.CreatePlayer(2, Elements));
+            AddElement(MenagerPlayerServices.CreatePlayer(1));
+            AddElement(MenagerPlayerServices.CreatePlayer(2));
         }
     }
 }
