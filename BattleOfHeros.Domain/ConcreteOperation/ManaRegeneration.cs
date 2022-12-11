@@ -7,7 +7,7 @@ using BattleOfHeroes.Domain.Common;
 
 namespace BattleOfHeroes.Domain.ConcreteOperation
 {
-    internal class ManaRegeneration : Operation
+    public class ManaRegeneration : Operation
     {
         public ManaRegeneration()
         {
@@ -20,13 +20,15 @@ namespace BattleOfHeroes.Domain.ConcreteOperation
         {
             if (IsActive == true)
             {
-                if ((hero.Mana += value) > hero.MaxMana)
+                int chceck = hero.Mana + value;
+
+                if (chceck > hero.MaxMana)
                 {
                     hero.Mana = hero.MaxMana;
                 }
                 else
                 {
-                    hero.Mana += value;
+                    hero.Mana = chceck;
                 }
             }          
         }
