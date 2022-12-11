@@ -12,7 +12,7 @@ namespace BattleOfHeroes.App.Menager
 {
     public class MenagerPlayerServices
     {
-        public static Player CreatePlayer(int id, List<Player> ele)
+        public static Player CreatePlayer(int id)
         {
             string playerName;
 
