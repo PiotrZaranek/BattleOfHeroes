@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BattleOfHeroes.Battle\BattleOfHeroes.BattleApp.csproj" />
     <ProjectReference Include="..\BattleOfHeros.Domain\BattleOfHeroes.Domain.csproj" />
   </ItemGroup>
 
