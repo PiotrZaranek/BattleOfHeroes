@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BattleOfHeroes.Domain", "Ba
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BattleOfHeroes.BattleApp", "BattleOfHeroes.Battle\BattleOfHeroes.BattleApp.csproj", "{BBB9D9D5-A44C-4DE9-B4B2-05D9B584F155}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleOfHeroes.UnitTests", "BattleOfHeroes.UnitTests\BattleOfHeroes.UnitTests.csproj", "{B8519925-5C7E-484B-B689-CDE981452844}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BattleOfHeroes.UnitTests", "BattleOfHeroes.UnitTests\BattleOfHeroes.UnitTests.csproj", "{B8519925-5C7E-484B-B689-CDE981452844}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
