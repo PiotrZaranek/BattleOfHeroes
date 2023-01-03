@@ -20,7 +20,8 @@ namespace BattleOfHeroes.App.Concrete
         {
             AddElement(new Menu(1, "Graj", "Main"));
             AddElement(new Menu(2, "Księga bohaterów","Main"));
-            AddElement(new Menu(3, "Wyjdź z gry", "Main"));
+            AddElement(new Menu(3, "Historia walk","Main"));
+            AddElement(new Menu(4, "Wyjdź z gry", "Main"));
 
             AddElement(new Menu(1, "Strażnik Gaju", "Hero"));
             AddElement(new Menu(2, "Paladyn", "Hero"));
