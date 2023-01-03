@@ -15,7 +15,7 @@ namespace BattleOfHeroes.Domain.ConcreteHero
         {
             Id = id;
             Name = "Strażnik Gaju";
-            Life = 250;
+            Life = 10;
             Mana = 100;
             Damage = 15;
             Defend = 3;
