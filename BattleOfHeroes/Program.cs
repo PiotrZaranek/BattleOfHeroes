@@ -12,7 +12,7 @@ namespace BattleOfHeroes
     {
         static void Main(string[] args)
         { 
-            Console.WindowHeight = 62;
+            Console.WindowHeight = 48;
             bool ExitGame = false;
             Console.Title = "Battle Of Heroes";           
             MenuServices menuServices = new MenuServices();
@@ -54,6 +54,13 @@ namespace BattleOfHeroes
                             break;
                         }
                     case '3':
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Tutaj będzie historia walk.");
+                            Console.ReadKey();
+                            break;
+                        }
+                    case '4':
                         {
                             ExitGame = true;
                             MainMenuHelper.GoodBye();
