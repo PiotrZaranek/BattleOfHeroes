@@ -29,9 +29,11 @@ namespace BattleOfHeroes.App.Concrete
 
         public void StartBattle(Battle battle, MenagerBattleServices menagerBattleServices)
         {
-            battle.Main();      
+            battle.Main();
+            Console.WriteLine("Siema!");
         }
 
+        
         
     }
 }
