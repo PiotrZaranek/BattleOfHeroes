@@ -13,7 +13,7 @@ namespace BattleOfHeroes.Domain.Abstract
     {
         List<Player> Players { get; }
         int Turn { get; set; }
-        BattleList BattleList { get; set; }
+        BattleList BattleList { get; set; }        
 
         void Main();      
     }

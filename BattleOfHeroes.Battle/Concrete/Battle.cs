@@ -14,7 +14,7 @@ namespace BattleOfHeroes.Domain.Concrete
     {
         public List<Player> Players { get; }
         public int Turn { get; set; }
-        public BattleList BattleList { get; set; }
+        public BattleList BattleList { get; set; }       
         
         public Battle(List<Player> players)
         {
@@ -472,7 +472,7 @@ namespace BattleOfHeroes.Domain.Concrete
             char choose;
             if (Players[0].Heroes.Count == 0)
             {
-                BattleHelper.Winner(Players[1].PlayerName);                                
+                BattleHelper.Winner(Players[1].PlayerName);                
             }
             else
             {
