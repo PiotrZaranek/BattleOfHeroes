@@ -114,5 +114,38 @@ namespace BattleOfHeroes.App.Menager
 
             return heros;
         }
+
+        public void ListBattleStory(BattleServices battleServices)
+        {        
+            if(battleServices.BattleStories.Count > 0)
+            {
+                foreach (var battleStory in battleServices.BattleStories)
+                {
+                    Console.WriteLine($"{battleStory.Id}. {battleStory.PlayerOne} vs {battleStory.PlayerTwo}");
+                }
+                Console.WriteLine("Q. Usuń wszystkie powtórki");
+                ServicesHelper.WriteQuestion();
+                char choose = Console.ReadKey().KeyChar;
+
+                if (choose == 'q')
+                {
+                    battleServices.BattleStories.Clear();
+                }
+
+                foreach (var battleStory in battleServices.BattleStories)
+                {
+                    if (choose - '0' == battleStory.Id)
+                    {
+                        battleServices.ListMoves(battleStory.BattleList);
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("Nie ma żadnych zapisanych walk!");
+                Console.ReadKey();
+            }
+        }
     }
 }
