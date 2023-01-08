@@ -5,13 +5,14 @@ using BattleOfHeroes.Domain.Concrete;
 using BattleOfHeroes.Domain.Common;
 using BattleOfHeroes.Domain.ConcreteHero;
 using BattleOfHeroes.Domain.ConcreteSkill.Paladin;
+using System.IO;
 
 namespace BattleOfHeroes
 {
     internal class Program
     {
         static void Main(string[] args)
-        { 
+        {
             Console.WindowHeight = 48;
             bool ExitGame = false;
             Console.Title = "Battle Of Heroes";           
@@ -24,7 +25,8 @@ namespace BattleOfHeroes
             MenagerPlayerServices menagerPlayerServices = new MenagerPlayerServices();
             MenagerBattleServices menagerBattleServices = new MenagerBattleServices();
 
-            
+            //test(battleServices);
+
             while (ExitGame == false)
             {
                 Console.Clear();
@@ -56,13 +58,13 @@ namespace BattleOfHeroes
                     case '3':
                         {
                             Console.Clear();
-                            Console.WriteLine("Tutaj będzie historia walk.");
-                            Console.ReadKey();
+                            menagerBattleServices.ListBattleStory(battleServices);                                                       
                             break;
                         }
                     case '4':
                         {
                             ExitGame = true;
+                            battleServices.SaveBattleStoryToFile();
                             MainMenuHelper.GoodBye();
                             break;
                         }
